@@ -1,0 +1,18 @@
+# Angel Perú IPTV — Creado por Angel Perú
+services:
+  - type: web
+    name: angel-peru-iptv
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: AP_ACCESS_TOKEN
+        sync: false
+      - key: ALLOWED_SOURCE_HOSTS
+        sync: false
+      - key: ALLOW_HTTP_SOURCES
+        value: "false"
